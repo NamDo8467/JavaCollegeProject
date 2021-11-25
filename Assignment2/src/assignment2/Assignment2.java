@@ -139,7 +139,7 @@ public class Assignment2 extends Application {
         Button btn_save = new Button("Save");
         //btn_save.setOnAction(e -> saveFunction());
         Button btn_search = new Button("Search");
-        //btn_search.setOnAction(e -> Search.display());
+        btn_search.setOnAction(e -> Search.display());
 
         HBox hBox_btn = new HBox();
         hBox_btn.setPadding(new Insets(10, 10, 10, 10));
@@ -211,7 +211,7 @@ public class Assignment2 extends Application {
 
     public ObservableList<Contact> ContactManager() {
         ObservableList<Contact> contacts = FXCollections.observableArrayList();
-        contacts.add(new Contact("Minh", "Nhat", "123", "456", "789", "accfree2016@gmail.com", "910", "pla pla"));
+        
         return contacts;
     }
 
