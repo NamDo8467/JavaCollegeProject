@@ -11,7 +11,7 @@ public class Contact {
     private String lastName;
     private String homePhone;
     private String workPhone;
-    private String homeAddress;
+    private Address address;
     private String email;
     private String birthday;
     private String notes;
@@ -27,12 +27,12 @@ public class Contact {
         
     }
     
-    public Contact(String fN, String lN, String homePhone, String workPhone, String homeAddress, String email, String birthday, String notes){
+    public Contact(String fN, String lN, String homePhone, String workPhone, Address address, String email, String birthday, String notes){
         this.firstName = fN;
         this.lastName = lN;
         this.homePhone = homePhone;
         this.workPhone = workPhone;
-        this.homeAddress = homeAddress;
+        this.address = address;
         this.email = email;
         this.birthday = birthday;
         this.notes = notes;
@@ -70,12 +70,12 @@ public class Contact {
         this.workPhone = workPhone;
     }
 
-    public String getHomeAddress() {
-        return homeAddress;
+    public Address getHomeAddress() {
+        return address;
     }
 
-    public void setHomeAddress(String homeAddress) {
-        this.homeAddress = homeAddress;
+    public void setHomeAddress(Address address) {
+        this.address = address;
     }
 
     public String getEmail() {
@@ -101,18 +101,17 @@ public class Contact {
     public void setNotes(String notes) {
         this.notes = notes;
     }
-         
-    
-    
-            
-            
-            
-    
-    
-    
-    
-    
-    
-    
-    
+    @Override
+    public String toString() {
+        String s = "First Name: " + firstName + "\n";
+        s += "Last name: " + lastName + "\n";
+        s += "Home phone: " + homePhone + "\n";
+        s += "Work phone=" + workPhone + "\n";
+        s += "Home address: " + address.toString() + "\n";
+        s += "Email: " + email + "\n";
+        s += "Birthday:" + birthday + "\n";
+        s += "Notes: " + notes + "\n";
+        return s;
+          
+    }
 }
