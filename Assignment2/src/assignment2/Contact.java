@@ -3,7 +3,8 @@ package assignment2;
 
 /**
  *
- * @author 
+ * Do Huynh - 101293009
+ * Minh Nhat Vo - 101224717
  */
 public class Contact {
     

@@ -6,10 +6,6 @@
 
 package assignment2;
 
-/**
- *
- * @author huynh
- */
 public class Address {
     public  String streetInfo1;
     public String streetInfo2;
