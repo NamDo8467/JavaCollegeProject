@@ -106,7 +106,7 @@ public class Contact {
         String s = "First Name: " + firstName + "\n";
         s += "Last name: " + lastName + "\n";
         s += "Home phone: " + homePhone + "\n";
-        s += "Work phone=" + workPhone + "\n";
+        s += "Work phone: " + workPhone + "\n";
         s += "Home address: " + address.toString() + "\n";
         s += "Email: " + email + "\n";
         s += "Birthday:" + birthday + "\n";

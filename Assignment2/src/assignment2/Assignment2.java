@@ -1,3 +1,9 @@
+/**
+ *
+ * Do Huynh - 101293009
+ * Minh Nhat Vo - 101224717
+ */
+
 package assignment2;
 
 import java.util.ArrayList;
