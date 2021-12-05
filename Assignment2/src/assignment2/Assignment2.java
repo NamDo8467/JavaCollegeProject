@@ -36,19 +36,15 @@ public class Assignment2 extends Application {
     TextField firstName_input, lastName_input, homePhone_input, workPhone_input,
             address_input, email_input, birthday_input, notes_input;
     
-    /* Do Huynh */
+    
     int minWidthOfColumn = 80;
     ContactManager contactManager = new ContactManager();
     
-    /* Do Huynh */
+    
     TextField date_input, month_input, year_input, 
             streetInfo1_input, streetInfo2_input, city_input, postalCode_input, province_input, country_input;
 
-    /*DO Huynh*/
     Alert alert = new Alert(AlertType.NONE);
-    
-   
-    
     
     public static void main(String[] args) {
         launch(args);
@@ -99,13 +95,7 @@ public class Assignment2 extends Application {
         email_input = new TextField();
         email_input.setPromptText("Email:");
         email_input.setMinWidth(minWidthOfColumn);
-
-        // Birthday input
-//        birthday_input = new TextField();
-//        birthday_input.setPromptText("Birthday:");
-//        birthday_input.setMinWidth(80);
-        
-        /* Do Huynh */
+ 
         date_input = new TextField();
         date_input.setPromptText("Date:");
         date_input.setMinWidth(minWidthOfColumn);
@@ -155,15 +145,11 @@ public class Assignment2 extends Application {
         Button btn_edit = new Button("Edit");
         btn_edit.setOnAction(e -> editContactInformation());
         Button btn_save = new Button("Save");
-        //btn_save.setOnAction(e -> saveFunction());
-//        Button btn_search = new Button("Search");
-//        btn_search.setOnAction(e -> Search.display());
-
-        /*Do HUynh */
+       
         Button btn_searchByCity = new Button("Search by city");
         btn_searchByCity.setOnAction(e -> searchByCity());
         
-        /*Do HUynh */
+        
         Button btn_searchByFirstAndLastName = new Button("Search by name");
         btn_searchByFirstAndLastName.setOnAction(e -> searchByFirstNameAndLastName());
         
@@ -176,18 +162,12 @@ public class Assignment2 extends Application {
         vBox.setPadding(new Insets(10));
         vBox.setSpacing(5);
         
-//        vBox.getChildren().addAll(firstName_input, lastName_input, homePhone_input, workPhone_input, address_input,
-//                email_input, birthday_input, notes_input, hBox_btn);
-
-
-        /* Do Huynh */
         vBox.getChildren().addAll(firstName_input, lastName_input, date_input, month_input, year_input, homePhone_input, workPhone_input, streetInfo1_input,
                 streetInfo2_input, city_input, postalCode_input, province_input, country_input,
                 email_input, notes_input, hBox_btn);
 
         
         table = new TableView<>();
-//        table.setItems(ContactManager());
          addColumnsToTable(table);
 
         // Make layout
@@ -196,6 +176,7 @@ public class Assignment2 extends Application {
 
         // Create scene
         Scene scene = new Scene(hBox);
+        
         //Display
         window.setScene(scene);
         window.show();
@@ -246,11 +227,11 @@ public class Assignment2 extends Application {
         note_col.setCellValueFactory(new PropertyValueFactory<>("notes"));
         table.getColumns().addAll(firstName_col, lastName_col, bir_col,  hmPhone_col, wkPhone_col, address_col, email_col, note_col);
     }
+    
     // Add button 
     public boolean  addContact(){
         Contact contact = new Contact();
         
-        /*Do Huynh */
          if(firstName_input.getText().isEmpty()  && lastName_input.getText().isEmpty()  && date_input.getText().isEmpty()  && 
                  month_input.getText().isEmpty()  && year_input.getText().isEmpty()  && homePhone_input.getText().isEmpty()  && 
                  workPhone_input.getText().isEmpty()  && streetInfo1_input.getText().isEmpty()  &&
@@ -268,7 +249,6 @@ public class Assignment2 extends Application {
         Address address = new Address(streetInfo1_input.getText(),streetInfo2_input.getText(),city_input.getText(),
         postalCode_input.getText(),province_input.getText(),country_input.getText());
         
-        /* Do Huynh*/
         contact.setFirstName(firstName_input.getText());
         contact.setLastName(lastName_input.getText());
         contact.setHomePhone(homePhone_input.getText());
@@ -311,7 +291,6 @@ public class Assignment2 extends Application {
         
     }
 
-    /* Do Huynh */
     public void updateTable(){
         table.getItems().clear();
         for (int i = 0; i < contactManager.getLength(); i++) {
@@ -319,7 +298,6 @@ public class Assignment2 extends Application {
         }
         
     }
-    /*Do Huynh*/
     public void deleteContact1(){
         
         try {
@@ -341,7 +319,6 @@ public class Assignment2 extends Application {
   
     }
     
-    /* Do Huynh */
     public void editContactInformation(){
         try {
             Contact contact = table.getSelectionModel().getSelectedItem();
@@ -376,8 +353,7 @@ public class Assignment2 extends Application {
         
 
     }
-    
-    /* Do Huynh */
+
     public void searchByCity(){
         Stage newStage = new Stage();
         
@@ -419,7 +395,7 @@ public class Assignment2 extends Application {
         newStage.setTitle("Search");
         newStage.show();
     }
-    /* Do Huynh */
+
     public void searchByFirstNameAndLastName(){
         Stage newStage = new Stage();
         VBox search_box = new VBox();
@@ -477,15 +453,4 @@ public class Assignment2 extends Application {
         }
 
     }
-
-    
-//    public ObservableList<Contact> ContactManager() {
-//        ObservableList<Contact> contacts = FXCollections.observableArrayList();
-//
-//        return contacts;
-//    }
-    
-    
-
-   
 }
