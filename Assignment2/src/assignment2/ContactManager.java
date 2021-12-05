@@ -7,10 +7,6 @@ package assignment2;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author huynh
- */
 public class ContactManager {
     private ArrayList<Contact> contactList;
     
@@ -18,6 +14,7 @@ public class ContactManager {
         contactList = new ArrayList<Contact>();
     }
 
+    
     public void addContact(Contact contact){
         contactList.add(contact);
     }
@@ -31,10 +28,12 @@ public class ContactManager {
         
     }
     
+    // Return the index at a specific index
     public Contact getContactAtIndex(int index){
         return contactList.get(index);
     }
     
+    // Return index of a specific contact
     public int getIndexOfContact(Contact contact){
         return contactList.indexOf(contact);
     }
@@ -47,17 +46,20 @@ public class ContactManager {
         }
     }
     
+    // Return all contact that matches the city
     public ArrayList<Contact> searchByCity(String city){
         ArrayList<Contact> result = new ArrayList<>();
         for (int i = 0; i < contactList.size(); i++) {
             if(contactList.get(i).getHomeAddress().city.equals(city)){
                 result.add(contactList.get(i));
+                return result;
                
            }
         }
-        return result;
+        return null;
     }
     
+     // Return all contact that matches the firstName and lastName
     public Contact searchFirstNameAndLastName(String firstName, String lastName){
         for (int i = 0; i < contactList.size(); i++) {
             if(contactList.get(i).getFirstName().equals(firstName) && contactList.get(i).getLastName().equals(lastName) ){

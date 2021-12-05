@@ -6,10 +6,6 @@
 
 package assignment2;
 
-/**
- *
- * @author huynh
- */
 public class MyDate {
         private int day;
         private int month;
